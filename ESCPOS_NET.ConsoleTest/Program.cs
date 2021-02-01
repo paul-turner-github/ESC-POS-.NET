@@ -50,7 +50,7 @@ namespace ESCPOS_NET.ConsoleTest
                     {
                         baudRate = "115200";
                     }
-                    printer = new SerialPrinter(portName: comPort, baudRate: 115200);
+                    printer = new SerialPrinter(portName: comPort, baudRate: int.Parse(baudRate));
                 }
                 else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
@@ -60,7 +60,7 @@ namespace ESCPOS_NET.ConsoleTest
                     {
                         comPort = "/dev/usb/lp0";
                     }
-                    printer = new FilePrinter(filePath: comPort);
+                    printer = new FilePrinter(filePath: comPort, false);
                 }
             }
             else if (choice == 2)

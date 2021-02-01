@@ -1,9 +1,7 @@
 ﻿using ESCPOS_NET.Emitters;
 using ESCPOS_NET.Utilities;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace ESCPOS_NET.ConsoleTest
 {
@@ -68,7 +66,7 @@ namespace ESCPOS_NET.ConsoleTest
 
             Random r = new Random();
             var filename = $"{r.NextDouble().ToString()}.tmp";
-            using (FilePrinter fp = new FilePrinter(filename))
+            using (FilePrinter fp = new FilePrinter(filename, true))
             { 
                 fp.Write(expectedResult);
             }
